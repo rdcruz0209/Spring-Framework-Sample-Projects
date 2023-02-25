@@ -23,8 +23,18 @@ public class App02HelloWorldSpring {
 //        }
         System.out.println(context.getBean("name"));
         System.out.println(context.getBean("age"));
+
+
         System.out.println(context.getBean("person"));
-        System.out.println(context.getBean("address"));
+        System.out.println("Person2MethodCall: " + context.getBean("person2MethodCall"));
+        System.out.println("Person3Parameters: " + context.getBean("person3Parameters"));
+        System.out.println(context.getBean("address2"));
+//       System.out.println(context.getBean(Address.class));
+
+//        for (String s : context.getBeanDefinitionNames()) {
+//            System.out.println("----");
+//            System.out.println(s);
+//        }
 
 
     }

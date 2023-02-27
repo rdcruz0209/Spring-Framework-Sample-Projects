@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
 record Person(String name, int age, Address address) {
 }
@@ -51,7 +52,6 @@ public class HelloWorldConfiguration {
     }
 
     @Bean
-
     public Person person5Qualifier(String name, int age, @Qualifier("address3qualifier") Address address) {
         return new Person(name, age, address); //use the spring bean to create a new person spring bean
         // the bean that will be returned is the name of the Bean defined as @Bean(name= "name") or method name if name is not defined
@@ -63,13 +63,13 @@ public class HelloWorldConfiguration {
 //        return new Address("Address: Block 10 Lot 25 Florenceville", "Santa Rosa Laguna");
 //    }
 
-    @Bean(name = "address2")
+    @Bean("address2")
     @Primary
     public Address address2() {
         return new Address("Address 2: Block 10 Lot 25 Florenceville", "Santa Rosa Laguna");
     }
 
-    @Bean(name = "address3")
+    @Bean("address3")
     @Qualifier("address3qualifier")
     public Address address3() {
         return new Address("Address 3: Lot 20 Amethyst Street Crismor Subd.", "San Pedro Laguna");

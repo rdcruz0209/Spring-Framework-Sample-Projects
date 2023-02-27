@@ -2,6 +2,8 @@ package com.in28minutes.learnspringframework.helloworld;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.Arrays;
+
 public class App02HelloWorldSpring {
 
     public static void main(String[] args) {
@@ -41,7 +43,7 @@ public class App02HelloWorldSpring {
 //        }
 
 //        alternative way of listing all spring beans contained in the context
-//        Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+            Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
 //        System.out.println(context.getBeanDefinitionCount());
             context.close();
         }

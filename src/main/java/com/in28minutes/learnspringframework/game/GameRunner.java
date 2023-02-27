@@ -7,6 +7,7 @@ public class GameRunner {
 
     private GamingConsole game;
 
+
 /*            tightly coupled
     private MarioGame marioGame;
 

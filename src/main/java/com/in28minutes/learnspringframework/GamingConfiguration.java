@@ -3,32 +3,42 @@ package com.in28minutes.learnspringframework;
 import com.in28minutes.learnspringframework.game.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
+
+import java.util.Scanner;
 
 @Configuration
 public class GamingConfiguration {
-
-    //        var game = new MarioGame();
-//        var game = new SuperContraGame();
-//        1: Object Creation
-//    var game = new PacmanGame();
-
-    @Bean("GamingConsole")
-    public GamingConsole game() {
-        var game = new PacmanGame();
-        return game;
-    }
-
-//    @Bean
-//    public MarioGame marioGame() {
-//        return new MarioGame();
-//    }
 
     @Bean("GameRunner")
     public GameRunner gameRunner() {
         var gameRunner = new GameRunner(game());
         return gameRunner;
     }
+
+    @Bean("GamingConsole")
+    public GamingConsole game() {
+        Scanner input = new Scanner((System.in));
+        GamingConsole game = null;
+        int choice = input.nextInt();
+        switch (choice) {
+            case 1:
+                game = new SuperContraGame();
+                break;
+            case 2:
+                game = new MarioGame();
+                break;
+            case 3:
+                game = new PacmanGame();
+                break;
+            default:
+                System.out.println("Game does not exist");
+                break;
+        }
+
+
+        return game;
+    }
+
 
 //    @Bean
 //    @Primary

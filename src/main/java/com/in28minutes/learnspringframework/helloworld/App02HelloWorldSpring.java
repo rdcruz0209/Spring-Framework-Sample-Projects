@@ -17,12 +17,6 @@ public class App02HelloWorldSpring {
             //name - @Bean
 
             //3: Retrieving Beans managed by Spring
-
-//        for (String s : context.getBeanDefinitionNames()) {
-//            System.out.println("----");
-//            System.out.println(s);
-//
-//        }
             System.out.println(context.getBean("name"));
             System.out.println(context.getBean("age"));
             System.out.println(context.getBean("person"));
@@ -34,14 +28,6 @@ public class App02HelloWorldSpring {
 
 //        use of @Qualifier to determine which bean should be used by the spring bean method
             System.out.println(context.getBean("person5Qualifier"));
-
-
-//        list all spring beans contained in the context
-//        for (String s : context.getBeanDefinitionNames()) {
-//            System.out.println("----");
-//            System.out.println(s);
-//        }
-
 //        alternative way of listing all spring beans contained in the context
             Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
 //        System.out.println(context.getBeanDefinitionCount());

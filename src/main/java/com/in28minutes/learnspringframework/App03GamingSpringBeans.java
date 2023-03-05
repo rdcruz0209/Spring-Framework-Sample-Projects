@@ -12,10 +12,11 @@ public class App03GamingSpringBeans {
                      new AnnotationConfigApplicationContext
                              (GamingConfiguration.class)) {
 
-            context.getBean(GamingConsole.class).up();
+//            context.getBean(GamingConsole.class).up();
 //            context.getBean(GameRunner.class).run();
-            context.getBean("GamingConsole");
             context.getBean(GameRunner.class).run();
+            context.getBean("GamingConsole");
+
         }
 
 //        GameRunner gameRunner = new GameRunner(game);

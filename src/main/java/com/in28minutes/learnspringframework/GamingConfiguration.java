@@ -13,23 +13,22 @@ import org.springframework.context.annotation.Primary;
 @Configuration
 @ComponentScan("com.in28minutes.learnspringframework.game")
 public class GamingConfiguration {
+    private GamingConsole gamingConsole;
 
-
-//    @Autowired
-//    @Primary
-//    public GamingConsole returnGame(MarioGame marioGame) {
-//        return marioGame;
-//    }
-
-    @Bean("GamingConsole")
-    @Primary
-    public GamingConsole game() {
-        System.out.println("Autowired using Java Beans ");
-        var game = new MarioGame();
-        GameRunner gameRunner = new GameRunner(game);
-        gameRunner.run();
-        return game;
+    @Autowired
+    public GamingConfiguration(GamingConsole gamingConsole) {
+        this.gamingConsole = gamingConsole;
     }
+
+    //    @Bean("GamingConsole")
+//    @Primary
+//    public GamingConsole game() {
+//        System.out.println("Autowired using Java Beans ");
+//        var game = new MarioGame();
+//        GameRunner gameRunner = new GameRunner(game);
+//        gameRunner.run();
+//        return game;
+//    }
 
 
 }

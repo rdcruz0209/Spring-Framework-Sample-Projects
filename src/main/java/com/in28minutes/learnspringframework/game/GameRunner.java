@@ -7,12 +7,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class GameRunner {
 
-    private GamingConsole game;
-
+    private final GamingConsole game;
 
     /*            tightly coupled
         private MarioGame marioGame;
-
         public GameRunner(MarioGame marioGame) {
             this.marioGame = marioGame;
         }*/
